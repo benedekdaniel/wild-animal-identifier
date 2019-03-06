@@ -1,0 +1,16 @@
+Type,Noun,ScientificNoun,MinSizeCm,MaxSizeCm,MinWeightGrams,MaxWeightGrams,Colour,Locomotion,Country,NaturalHabitat,BeakShape,Colours of feathers,Min length of wingspan cm,Max length of wingspan cm
+Bird,Buzzard,Buteo buteo,51,57,550,1300,Brown,Fly,United Kingdom;Switzerland;France;Belgium,Woodland;Farmland;Grassland;Heathland;Upland,Short,Black;Brown;White,113,128
+Bird,Common Ostrich,Struthio camelus,170,280,63000,145000,Brown,Walk,South Africa;Namibia,Semi-Desert Savannah;Woodland,Long,Brown;Black;White,190,200
+Bird,Cormorant,Phalacrocorax carbo,80,100,2100,2500,Black,Fly;Swim,United Kingdom;Switzerland;France;Belgium,Marine and intertidal;Urban and suburban;Wetland,Long,Black;Brown;White,130,160
+Bird,Mallard,Anas platyrhynchos,50,65,72,158,Brown,Fly;Swim,Switzerland;Belgium;United Kingdom;USA;Canada,Farmland;Marine and intertidal;Grassland;Marine and intertidal;Urban and suburban;Wetland,Long,Black;Blue;Brown;Cream,81,98
+Bird,Merlin,Falco columbarius,25,30,125,300,Black,Fly,United Kingdom;Switzerland;France;Belgium,Farmland;Marine and intertidal;Grassland;Upland;Wetland,Medium length,Black;Blue;Brown;Cream;Grey,50,62
+Bird,Royal spoonbill,Platalea regia,74,81,1400,2071,White,Fly,Australia,Marine and intertidal,Flat,White,110,120
+Bird,Wren,Troglodytes troglodytes,9,10,7,12,Brown,Fly,United Kingdom;Switzerland;France;Belgium,Woodland;Farmland;Heathland;Urban and suburban,Short,Brown;Cream;White,13,17
+Mammal,Black Rhinoceros,Diceros Bicornis,150,160,800000,1500000,Grey,Walk,Namibia;South Africa;Botswana,Semi-Desert Savannah;Woodland;Forest;Wetland,null,null,null,null
+Mammal,Blue whale,Balaenoptera musculus,2000,3000,150000000,200000000,Grey,Swim,Canada;USA;South Africa;Antarctic;Spain;Peru;Thailand,Marine and intertidal,null,null,null,null
+Mammal,Bobcat,Lynx rufus,30,60,6400,18300,Grey-Brown;Black streaks,Walk,Canada,Upland,null,null,null,null
+Mammal,Bumblebee bat,Craseonycteris thonglongyai,2,3,2,3,Brown,Fly,Thailand;Burma,Cave,null,null,null,null
+Mammal,Humpback Whale,Megaptera novaeangliae,1200,1600,25000000,40000000,Grey,Swim,Canada;USA;South Africa;Antarctic;Spain;Scotland;Peru;Thailand,Marine and intertidal,null,null,null,null
+Reptile,Brahminy blind snake,Indotymhlops braminus,5,10,0.05,1.87,Brown,Slither,Australia;USA;South Africa,Urban and suburban;Woodland,null,null,null,null
+Reptile,Saltwater crocodile,Crocodylus porosus,430,560,1000000,1500000,Green,Walk;Swim,Thailand;Burma,Marine and intertidal,null,null,null,null
+Reptile,Slow worm,Anguis fragilis,20,50,20,100,Brown,Slither,United Kingdom;Switzerland;France;Belgium,Grassland;Woodland,null,null,null,null
