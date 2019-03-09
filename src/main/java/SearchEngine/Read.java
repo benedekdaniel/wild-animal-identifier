@@ -1,3 +1,5 @@
+package SearchEngine;
+
 import java.io.Reader;
 import java.nio.file.Path;
 import java.util.List;
@@ -13,6 +15,11 @@ import java.nio.file.Files;
 
 
 public class Read {
+
+    public Read() {
+
+
+    }
 
     public List<String[]> readFileAndParse(Path csvFile) {
         List<String[]> records=null;
