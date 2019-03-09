@@ -1,4 +1,4 @@
-package Engine;
+package SearchEngine;
 
 import java.io.Reader;
 import java.nio.file.Path;

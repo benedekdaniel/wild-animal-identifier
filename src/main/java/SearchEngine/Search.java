@@ -1,4 +1,4 @@
-package Engine;
+package SearchEngine;
 
 import java.nio.file.Paths;
 import java.util.List;
@@ -16,6 +16,7 @@ public class Search {
         Read readCSV = new Read();
         List<String[]> strings = readCSV.readFileAndParse(Paths.get("findAnAnimal.csv"));
 
+
         for (String[] s : strings) {
 
             Scanner scanner = new Scanner(System.in);
@@ -23,12 +24,12 @@ public class Search {
             System.out.println("What are you looking for?");
             String feedback = scanner.nextLine();
 
-            if (feedback.equals("anyad")){
+            if (feedback.equals("buzzard")){
                 System.out.println("type " + s[0]);
                 System.out.println("noun " + s[1]);
                 System.out.println("scientific noun " + s[2]);
             } else{
-                throw new IndexOutOfBoundsException("wrong answer");
+                throw new IndexOutOfBoundsException("wrong answer!");
             }
 
 
