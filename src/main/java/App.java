@@ -1,5 +1,6 @@
 
 import searchengine.AnimalParser;
+import searchengine.Menu;
 
 import java.io.IOException;
 
@@ -8,15 +9,13 @@ public class App {
 
     public static void main(String[] args) throws IOException {
 
-        AnimalParser x = new AnimalParser();
+        Menu query = new Menu();
 
-
-        x.getBackAnimals();
-
+        query.getBackQuery();
 
     }
 
-    }
+}
 
 
 
