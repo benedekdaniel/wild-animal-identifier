@@ -1,5 +1,4 @@
 
-import searchengine.AnimalParser;
 import searchengine.Menu;
 
 import java.io.IOException;

@@ -3,8 +3,6 @@ package searchengine;
 import animal.Animal;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -13,7 +11,11 @@ public class Menu {
 
     private AnimalParser getAnimals = new AnimalParser();
 
+
     public void getBackQuery() throws IOException {
+
+         Read y = new Read();
+
 
         System.out.println("What you searching by?");
         System.out.println("[1] Query");
@@ -36,7 +38,7 @@ public class Menu {
                 String scientificNounSearch = scanner.nextLine();
 
 
-                for (Animal s : getAnimals.getBackAnimals()) {
+                for (Animal s: getAnimals.parseAnimals(y.gettingFilePath())) {
                     if (s.getType().equals(typeSearch) && s.getNoun().equals(nounSearch)
                             && s.getScientificNoun().equals(scientificNounSearch)) {
                         System.out.println(s);
