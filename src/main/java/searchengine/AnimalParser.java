@@ -15,8 +15,9 @@ import java.util.stream.StreamSupport;
 public class AnimalParser {
 
 
-    public void getBackAnimals() throws IOException {
+    public List<Animal> getBackAnimals() throws IOException {
 
+        List<Animal> animalList = null;
         try {
 
             Read reader = new Read();
@@ -28,17 +29,19 @@ public class AnimalParser {
 
             Stream<CSVRecord> csvRecordStream = StreamSupport.stream(csvParser.spliterator(), false);
 
-            List<Animal> animalList = csvRecordStream
+            animalList = csvRecordStream
                     .skip(1)
                     .map(CSVRecord::toMap)
                     .map(Animal::new)
                     .collect(Collectors.toList());
+            
+            return animalList;
 
-            for (Animal s : animalList) {
-                System.out.println(s);
-            }
-        } catch (IOException e){
+
+        } catch (IOException e) {
             System.out.println(e);
         }
+
+        return animalList;
     }
 }
