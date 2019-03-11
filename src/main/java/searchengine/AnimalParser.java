@@ -1,47 +1,53 @@
 package searchengine;
 
 import animal.Animal;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class AnimalParser {
 
 
-    public List<Animal> getBackAnimals() throws IOException {
+    public List<Animal> parseAnimals(Path filePath) {
+        BufferedReader reader = null;
+        List<Animal> animals = new ArrayList<Animal>();
 
-        List<Animal> animalList = null;
         try {
+            String line = "";
+            reader = new BufferedReader(new FileReader(String.valueOf(filePath)));
+            reader.readLine();
 
-            Read reader = new Read();
+            while((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
 
-            CSVParser csvParser = CSVParser.parse(reader.gettingFilePath()
-                    , Charset.defaultCharset(),
-                    CSVFormat.DEFAULT.withHeader("type", "noun", "scientificnoun")
-            );
-
-            Stream<CSVRecord> csvRecordStream = StreamSupport.stream(csvParser.spliterator(), false);
-
-            animalList = csvRecordStream
-                    .skip(1)
-                    .map(CSVRecord::toMap)
-                    .map(Animal::new)
-                    .collect(Collectors.toList());
-            
-            return animalList;
+                if(fields.length > 0) {
+                    Animal animal = new Animal();
+                    animal.setType(fields[0]);
+                    animal.setNoun(fields[1]);
+                    animal.setScientificNoun(fields[2]);
+                    animals.add(animal);
+                }
+            }
 
 
-        } catch (IOException e) {
-            System.out.println(e);
+            return animals;
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                reader.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        return animalList;
+        return animals=null;
+
+
     }
+
 }
