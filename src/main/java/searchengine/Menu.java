@@ -14,8 +14,6 @@ public class Menu {
 
     public void getBackQuery() throws IOException {
 
-         Read y = new Read();
-
 
         System.out.println("What you searching by?");
         System.out.println("[1] Query");
@@ -31,14 +29,14 @@ public class Menu {
             case ("1"):
 
                 System.out.println("Give the type: ");
-                String typeSearch = scanner.nextLine();
+                String typeSearch = scanner.nextLine().toUpperCase();
                 System.out.println("Give me the noun");
-                String nounSearch = scanner.nextLine();
+                String nounSearch = scanner.nextLine().toUpperCase();
                 System.out.println("Give me the scientificNoun");
-                String scientificNounSearch = scanner.nextLine();
+                String scientificNounSearch = scanner.nextLine().toUpperCase();
 
 
-                for (Animal s: getAnimals.parseAnimals(y.gettingFilePath())) {
+                for (Animal s: getAnimals.parseAnimals()) {
                     if (s.getType().equals(typeSearch) && s.getNoun().equals(nounSearch)
                             && s.getScientificNoun().equals(scientificNounSearch)) {
                         System.out.println(s);

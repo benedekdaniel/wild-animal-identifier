@@ -10,28 +10,37 @@ import java.util.List;
 public class AnimalParser {
 
 
-    public List<Animal> parseAnimals(Path filePath) {
+    public List<Animal> parseAnimals() {
         BufferedReader reader = null;
         List<Animal> animals = new ArrayList<Animal>();
-        Read y = new Read();
 
         try {
             String line = "";
-            reader = new BufferedReader(new FileReader(String.valueOf(y.gettingFilePath())));
+            reader = new BufferedReader(new FileReader(new File("findAnAnimal.csv")));
             reader.readLine();
 
             while((line = reader.readLine()) != null) {
+                line = line.toUpperCase();
                 String[] fields = line.split(",");
+                Animal animal;
 
                 if(fields.length > 0) {
-                    Animal animal = new Animal();
-                    animal.setType(fields[0]);
-                    animal.setNoun(fields[1]);
-                    animal.setScientificNoun(fields[2]);
-                    animals.add(animal);
-                }
-            }
 
+
+                    if (fields[0].equals("BIRD")) {
+                        animal = new Bird();
+                        // TODO: fill
+
+                    } else if (fields[0].equals("REPTILE")) {
+                        animal = new Reptile();
+                        // TODO: fill
+                    } else {
+                        animal = new Mammal();
+                    }
+                }
+
+
+            }
 
             return animals;
 
