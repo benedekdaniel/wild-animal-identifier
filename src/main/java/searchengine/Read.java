@@ -5,16 +5,15 @@ import java.nio.file.Paths;
 
 public class Read {
 
-    public Path gettingFilePath() {
-       String documentsPath = System.getProperty("user.dir");
+    public Path gettingFilePath(){
 
-       Path documentsDirectory = Paths.get(documentsPath);
+    String documentsPath = System.getProperty("user.dir");
 
-       String filename = "findAnAnimal.csv";
+    Path documentsDirectory = Paths.get(documentsPath);
 
-       return documentsDirectory.resolve(filename);
+    String filename = "findAnAnimal.csv";
+
+    return documentsDirectory.resolve(filename);
+
     }
-
-//fgi
-
 }

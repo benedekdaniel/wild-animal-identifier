@@ -2,8 +2,7 @@ package searchengine;
 
 import animal.Animal;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +13,11 @@ public class AnimalParser {
     public List<Animal> parseAnimals(Path filePath) {
         BufferedReader reader = null;
         List<Animal> animals = new ArrayList<Animal>();
+        Read y = new Read();
 
         try {
             String line = "";
-            reader = new BufferedReader(new FileReader(String.valueOf(filePath)));
+            reader = new BufferedReader(new FileReader(String.valueOf(y.gettingFilePath())));
             reader.readLine();
 
             while((line = reader.readLine()) != null) {
