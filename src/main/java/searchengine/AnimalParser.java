@@ -11,6 +11,14 @@ import java.util.List;
 
 public class AnimalParser {
 
+    /**
+     *
+     * Reading csv file and set animal
+     * properties based on type
+     *
+     * @return returns animalList
+     */
+
 
     public List<Animal> parseAnimals() {
         BufferedReader reader = null;
@@ -28,6 +36,7 @@ public class AnimalParser {
 
                 if(fields.length > 0) {
 
+                    //If type is BIRD,REPTILE,MAMMAL make appropriate instance
 
                     if (fields[0].equals("BIRD")) {
                         animal = new Bird();
@@ -67,6 +76,15 @@ public class AnimalParser {
 
         return animals=null;
     }
+
+    /**
+     * Refactoring redundant data,
+     * set properties once instead of
+     * more times
+     *
+     * @param fields setting property by corresponding field
+     * @param animal the animal which properties will be changed
+     */
 
     private void newAnimal(String[] fields, Animal animal) {
         animal.setType(fields[0]);
