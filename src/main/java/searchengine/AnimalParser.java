@@ -31,7 +31,6 @@ public class AnimalParser {
 
                     if (fields[0].equals("BIRD")) {
                         animal = new Bird();
-                        // TODO: fill
                         newAnimal(fields, animal);
                         ((Bird) animal).setBeakShape(fields[11]);
                         ((Bird) animal).setColoursOfFeathers(fields[12]);
@@ -42,7 +41,6 @@ public class AnimalParser {
 
                     } else if (fields[0].equals("REPTILE")) {
                         animal = new Reptile();
-                        // TODO: fill
 
                         newAnimal(fields, animal);
                         animals.add(animal);

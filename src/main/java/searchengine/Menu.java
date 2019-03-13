@@ -58,6 +58,7 @@ public class Menu {
                                         break;
                                     }
                                 }
+                                System.out.println("No such animal in list");
                                 break;
 
                             case ("2") :
@@ -70,6 +71,7 @@ public class Menu {
                                         break;
                                     }
                                 }
+                                System.out.println("No such animal in list");
                                 break;
                         }
                         break;
@@ -77,6 +79,7 @@ public class Menu {
                     case ("2") :
 
                         System.out.println("Choose from options");
+                        System.out.println();
                         break;
 
                     default:
@@ -102,4 +105,3 @@ public class Menu {
 
     }
 }
-
