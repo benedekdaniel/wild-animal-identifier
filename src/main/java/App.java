@@ -1,17 +1,23 @@
 
 import searchengine.Menu;
 
-import java.io.IOException;
-
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        Menu query = new Menu();
+        String command = "";
+        do {
+            try {
 
-        query.getBackQuery();
+                Menu query = new Menu();
 
+                command = query.getBackQuery();
+
+            } catch (Exception e) {
+                System.out.println("Program could not run");
+            }
+        } while(!command.equals("3"));
     }
 
 }

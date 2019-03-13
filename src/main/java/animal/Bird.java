@@ -1,5 +1,8 @@
 package animal;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Bird extends Animal {
 
     private String beakShape;
@@ -58,9 +61,27 @@ public class Bird extends Animal {
         return maxLengthOfWingspanCm;
     }
 
+    @Override
+    public ArrayList<String> getAsStringList() {
+        ArrayList<String> asStringList = super.getAsStringList();
+        asStringList.add(beakShape);
+        asStringList.add(coloursOfFeathers);
+        asStringList.add(maxLengthOfWingspanCm.toString());
+        asStringList.add(minLengthOfWingspanCm.toString());
+
+        return asStringList;
+    }
+
     public void setMaxLengthOfWingspanCm(Double maxLengthOfWingspanCm) {
         this.maxLengthOfWingspanCm = maxLengthOfWingspanCm;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", \n beakShape = '" + beakShape + '\'' +
+                ", \n coloursOfFeather = '" + coloursOfFeathers + '\'' +
+                ", \n minLengthOfWingspanCm = '" + minLengthOfWingspanCm+ '\'' +
+                ", \n maxLengthOfWingspanCm = '" + maxLengthOfWingspanCm+ '\'';
+    }
 }

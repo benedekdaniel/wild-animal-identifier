@@ -17,7 +17,7 @@ public class AnimalParser {
         List<Animal> animals = new ArrayList<Animal>();
 
         try {
-            String line = "";
+            String line;
             reader = new BufferedReader(new FileReader(new File("findAnAnimal.csv")));
             reader.readLine();
 

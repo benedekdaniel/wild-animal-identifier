@@ -1,6 +1,8 @@
 package animal;
 
-public class Animal {
+import java.util.ArrayList;
+
+public abstract class Animal {
 
     private String type;
     private String noun;
@@ -125,6 +127,24 @@ public class Animal {
 
     public void setNaturalHabitats(String naturalHabitats) {
         this.naturalHabitats = naturalHabitats;
+    }
+
+    public ArrayList<String> getAsStringList() {
+        ArrayList<String> asStringList = new ArrayList<>();
+
+        asStringList.add(type);
+        asStringList.add(noun);
+        asStringList.add(scientificNoun);
+        asStringList.add(minSizeCm.toString());
+        asStringList.add(maxSizeCm.toString());
+        asStringList.add(minWeightGrams.toString());
+        asStringList.add(maxWeightGrams.toString());
+        asStringList.add(colour);
+        asStringList.add(locomotion);
+        asStringList.add(country);
+        asStringList.add(naturalHabitats);
+
+        return asStringList;
     }
 
     @Override
