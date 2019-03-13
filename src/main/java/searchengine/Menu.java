@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -20,6 +21,15 @@ public class Menu {
 
     private AnimalParser getAnimals = new AnimalParser();
 
+    /**
+     * The menu of the game that reads user input
+     * and gives appropriate queries according
+     * to given information
+     *
+     * @return returns user input for the do while
+     * in the main
+     */
+
 
     public String getBackQuery() {
 
@@ -29,10 +39,10 @@ public class Menu {
         System.out.println("[3] Exit");
 
         Scanner scanner = new Scanner(System.in);
-        String x = scanner.nextLine();
+        String userInput = scanner.nextLine();
 
 
-        switch (x) {
+        switch (userInput) {
 
             case ("1"):
 
@@ -46,7 +56,7 @@ public class Menu {
                     case ("1") :
 
                         System.out.println("[1] By noun");
-                        System.out.println("[2] By scientificNoun");
+                        System.out.println("[2] By scientific noun");
                         String queryByName = scanner.nextLine().toUpperCase();
 
 
@@ -60,44 +70,62 @@ public class Menu {
 
                                 try {
 
+                                    /*If user input equals to one of objects in animal list
+                                      it's printed if not throws exception
+                                      User can type either upper or lower caps as it will
+                                      be converted to uppercase
+                                    */
+
                                     System.out.println("Give the noun please");
                                     String searchByNoun = scanner.nextLine().toUpperCase();
                                     inputLogger("NOUN " + searchByNoun);
-                                        boolean found = false;
-                                        for (Animal s : getAnimals.parseAnimals()) {
-                                            if (s.getNoun().equals(searchByNoun)) {
-                                                System.out.println(s);
-                                                found = true;
-                                                break;
-                                            }
+                                    boolean found = false;
+                                    for (Animal s : getAnimals.parseAnimals()) {
+                                        if (s.getNoun().equals(searchByNoun)) {
+                                            System.out.println(s);
+                                            found = true;
+                                            break;
                                         }
-                                        if(!found)
-                                            throw new Exception();
+                                    }
+                                    if(!found)
+                                        throw new Exception();
                                     } catch(Exception e) {
                                         System.out.println("No such animal in list");
-                        }
+                                    }
                                 break;
 
                             case ("2") :
 
-                                System.out.println("Give scientific noun please");
-                                String searchByScientificNoun = scanner.nextLine().toUpperCase();
-                                inputLogger(searchByScientificNoun);
+                                try {
 
-                                for (Animal s: getAnimals.parseAnimals()){
-                                    if(s.getScientificNoun().equals(searchByScientificNoun)) {
-                                        System.out.println(s);
-                                        break;
+                                    System.out.println("Give scientific noun please");
+                                    String searchByScientificNoun = scanner.nextLine().toUpperCase();
+                                    inputLogger(searchByScientificNoun);
+                                    boolean found = false;
+                                    for (Animal s : getAnimals.parseAnimals()) {
+                                        if (s.getScientificNoun().equals(searchByScientificNoun)) {
+                                            System.out.println(s);
+                                            found = true;
+                                            break;
+                                        }
                                     }
+                                    if (!found)
+                                        throw new Exception();
+                                } catch (Exception e) {
+                                    System.out.println("No such animals in list");
                                 }
-                                System.out.println("No such animal in list");
                                 break;
                         }
                         break;
 
                     case ("2") :
 
-                        System.out.println("Give me the query");
+                        /*Put every query in String[] with upper case
+                          words. Put it into array list. And checking if
+                          query is in animal list with the contains method
+                         */
+
+                        System.out.println("Give the query");
                         String query = scanner.nextLine().toUpperCase();
                         String[] complexQuery = query.split(",");
                         ArrayList<String> queryForSearch = new ArrayList<>(Arrays.asList(complexQuery));
@@ -121,9 +149,9 @@ public class Menu {
                 break;
 
             case ("2"):
-                System.out.println("Give me the noun your searching the occurance of");
-                String occuranceSearch = scanner.nextLine().toUpperCase();
-                countOccurence(occuranceSearch);
+                System.out.println("Give me the noun your searching the occurrence of");
+                String occurrenceSearch = scanner.nextLine().toUpperCase();
+                countOccurrence(occurrenceSearch);
                 break;
 
             case ("3"):
@@ -134,8 +162,16 @@ public class Menu {
                 break;
 
         }
-        return x;
+        return userInput;
     }
+
+    /**
+     * The logger of the user inputs. It records
+     * user inputs and appending it to a text file if
+     * exists. Otherwise creates a new one.
+     *
+     * @param appendingLine parameter for user input (scanner.nextLine() strings)
+     */
 
     private static void inputLogger(String appendingLine) {
 
@@ -150,27 +186,35 @@ public class Menu {
         }
     }
 
-    private static void countOccurence(String searchedAnimal) {
-        int occurcance = 0;
+    /**
+     *The count occurrence function that gives back number
+     * of occurrences of given nouns from the text file
+     *
+     *
+     * @param searchedAnimal parameter for user input (searched noun)
+     */
+
+    private static void countOccurrence(String searchedAnimal) {
+        int occurrence = 0;
         double all = 0;
         String line;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(new File("FindAnAnimalLog.txt")));
-            while ((line = reader.readLine()) != null) {
-                if (line.startsWith("NOUN ")) {
-                    all++;
-                    if (line.contains(searchedAnimal)) {
-                        occurcance++;
+            while ((line = reader.readLine()) != null) {    //Reading through the text file if exists
+                if (line.startsWith("NOUN ")) {             //and searching for Noun keyword.
+                    all++;                                  //If there is, the overall counter increases.
+                    if (line.contains(searchedAnimal)) {    //If that line contains the searched noun
+                        occurrence++;                       //the occurrence number also increases
                     }
 
-                    //TODO change name of value occurcance
                 }
             }
-            double finalOccurence = (occurcance/all) * 100.0;
+            //finally gives back the percentage by dividing occurrence with the overall counter.
+            double finalOccurrence = (occurrence/all) * 100.0;
 
             System.out.println(String.format("The occurence of the noun is: %d." +
                             " The avarage of your searched noun: %.2f%%",
-                    occurcance, finalOccurence));
+                    occurrence, finalOccurrence));
 
         } catch (IOException e) {
             e.printStackTrace();

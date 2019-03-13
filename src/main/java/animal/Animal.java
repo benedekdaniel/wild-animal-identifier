@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 public abstract class Animal {
 
+    /**
+     * Animal class
+     *
+     * Superclass of all animals
+     * Shares base properties
+     *
+     */
+
     private String type;
     private String noun;
     private String scientificNoun;
@@ -20,8 +28,6 @@ public abstract class Animal {
     public Animal() {
 
     }
-
-
 
     public String getType() {
         return type;
@@ -110,6 +116,15 @@ public abstract class Animal {
     public void setNaturalHabitats(String naturalHabitats) {
         this.naturalHabitats = naturalHabitats;
     }
+
+    /**
+     * The getAsStringList function
+     * Returns a string list with the same attributes as the
+     * animal list ones
+     *
+     * @return asStringList
+     */
+
 
     public ArrayList<String> getAsStringList() {
         ArrayList<String> asStringList = new ArrayList<>();
