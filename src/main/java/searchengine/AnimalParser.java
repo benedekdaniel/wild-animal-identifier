@@ -37,6 +37,7 @@ public class AnimalParser {
                         ((Bird) animal).setColoursOfFeathers(fields[12]);
                         ((Bird) animal).setMinLengthOfWingspanCm(Double.parseDouble(fields[13]));
                         ((Bird) animal).setMaxLengthOfWingspanCm(Double.parseDouble(fields[14]));
+                        animals.add(animal);
 
 
                     } else if (fields[0].equals("REPTILE")) {
@@ -44,10 +45,12 @@ public class AnimalParser {
                         // TODO: fill
 
                         newAnimal(fields, animal);
+                        animals.add(animal);
                     } else {
                         animal = new Mammal();
 
                         newAnimal(fields, animal);
+                        animals.add(animal);
                     }
                 }
             }

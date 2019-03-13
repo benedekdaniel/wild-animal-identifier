@@ -130,17 +130,17 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-                "type='" + type + '\'' +
-                ", noun='" + noun + '\'' +
-                ", scientificNoun='" + scientificNoun + '\'' +
-                ", minSizeCm=" + minSizeCm +
-                ", maxSizeCm=" + maxSizeCm +
-                ", minWeightGrams=" + minWeightGrams +
-                ", maxWeightGrams=" + maxWeightGrams +
-                ", colour='" + colour + '\'' +
-                ", locomotion='" + locomotion + '\'' +
-                ", country='" + country + '\'' +
-                ", naturalHabitats='" + naturalHabitats + '\'' +
+                " \n type = '" + type + '\'' +
+                ", \n noun = '" + noun + '\'' +
+                ", \n scientificNoun = '" + scientificNoun + '\'' +
+                ", \n minSizeCm = " + minSizeCm +
+                ", \n maxSizeCm = " + maxSizeCm +
+                ", \n minWeightGrams = " + minWeightGrams +
+                ", \n maxWeightGrams = " + maxWeightGrams +
+                ", \n colour = '" + colour + '\'' +
+                ", \n locomotion = '" + locomotion + '\'' +
+                ", \n country = '" + country + '\'' +
+                ", \n naturalHabitats = '" + naturalHabitats + '\'' +
                 '}';
     }
 }

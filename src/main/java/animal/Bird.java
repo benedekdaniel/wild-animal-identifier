@@ -62,13 +62,5 @@ public class Bird extends Animal {
         this.maxLengthOfWingspanCm = maxLengthOfWingspanCm;
     }
 
-    @Override
-    public String toString() {
-        return "Bird{" +
-                "beakShape='" + beakShape + '\'' +
-                ", coloursOfFeathers='" + coloursOfFeathers + '\'' +
-                ", minLengthOfWingspanCm=" + minLengthOfWingspanCm +
-                ", maxLengthOfWingspanCm=" + maxLengthOfWingspanCm +
-                '}';
-    }
+
 }
