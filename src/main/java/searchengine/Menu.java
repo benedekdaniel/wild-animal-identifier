@@ -3,6 +3,9 @@ package searchengine;
 import animal.Animal;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -78,8 +81,18 @@ public class Menu {
 
                     case ("2") :
 
-                        System.out.println("Choose from options");
-                        System.out.println();
+                        System.out.println("Give me the query");
+                        String[] complexQuery = scanner.nextLine().toUpperCase().split(",");
+                        ArrayList<String> queryForSearch = new ArrayList<>(Arrays.asList(complexQuery));
+                        System.out.println(Arrays.toString(complexQuery));
+
+                        for (Animal s: getAnimals.parseAnimals()) {
+                            if (getAnimals.parseAnimals().contains(queryForSearch)) {
+
+                                System.out.println(s);
+
+                            }
+                        }
                         break;
 
                     default:
