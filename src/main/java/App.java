@@ -4,6 +4,14 @@ import searchengine.Menu;
 
 public class App {
 
+    /**
+     * The menu of the queries
+     * Creating instance of Menu and running
+     * query
+     *
+     * @param args main application
+     */
+
     public static void main(String[] args) {
 
         String command = "";

@@ -26,7 +26,7 @@ public class Menu {
      * and gives appropriate queries according
      * to given information
      *
-     * @return returning user input for the do while
+     * @return returns user input for the do while
      * in the main
      */
 
@@ -72,21 +72,23 @@ public class Menu {
 
                                     /*If user input equals to one of objects in animal list
                                       it's printed if not throws exception
+                                      User can type either upper or lower caps as it will
+                                      be converted to uppercase
                                     */
 
                                     System.out.println("Give the noun please");
                                     String searchByNoun = scanner.nextLine().toUpperCase();
                                     inputLogger("NOUN " + searchByNoun);
-                                        boolean found = false;
-                                        for (Animal s : getAnimals.parseAnimals()) {
-                                            if (s.getNoun().equals(searchByNoun)) {
-                                                System.out.println(s);
-                                                found = true;
-                                                break;
-                                            }
+                                    boolean found = false;
+                                    for (Animal s : getAnimals.parseAnimals()) {
+                                        if (s.getNoun().equals(searchByNoun)) {
+                                            System.out.println(s);
+                                            found = true;
+                                            break;
                                         }
-                                        if(!found)
-                                            throw new Exception();
+                                    }
+                                    if(!found)
+                                        throw new Exception();
                                     } catch(Exception e) {
                                         System.out.println("No such animal in list");
                                     }
@@ -94,25 +96,36 @@ public class Menu {
 
                             case ("2") :
 
-                                System.out.println("Give scientific noun please");
-                                String searchByScientificNoun = scanner.nextLine().toUpperCase();
-                                inputLogger(searchByScientificNoun);
+                                try {
 
-                                for (Animal s: getAnimals.parseAnimals()){
-                                    if(s.getScientificNoun().equals(searchByScientificNoun)) {
-                                        System.out.println(s);
-                                        break;
+                                    System.out.println("Give scientific noun please");
+                                    String searchByScientificNoun = scanner.nextLine().toUpperCase();
+                                    inputLogger(searchByScientificNoun);
+                                    boolean found = false;
+                                    for (Animal s : getAnimals.parseAnimals()) {
+                                        if (s.getScientificNoun().equals(searchByScientificNoun)) {
+                                            System.out.println(s);
+                                            found = true;
+                                            break;
+                                        }
                                     }
-                                    //TODO make it as the one in advance
+                                    if (!found)
+                                        throw new Exception();
+                                } catch (Exception e) {
+                                    System.out.println("No such animals in list");
                                 }
-                                System.out.println("No such animal in list");
                                 break;
                         }
                         break;
 
                     case ("2") :
 
-                        System.out.println("Give me the query");
+                        /*Put every query in String[] with upper case
+                          words. Put it into array list. And checking if
+                          query is in animal list with the contains method
+                         */
+
+                        System.out.println("Give the query");
                         String query = scanner.nextLine().toUpperCase();
                         String[] complexQuery = query.split(",");
                         ArrayList<String> queryForSearch = new ArrayList<>(Arrays.asList(complexQuery));
@@ -137,8 +150,8 @@ public class Menu {
 
             case ("2"):
                 System.out.println("Give me the noun your searching the occurrence of");
-                String occuranceSearch = scanner.nextLine().toUpperCase();
-                countOccurrence(occuranceSearch);
+                String occurrenceSearch = scanner.nextLine().toUpperCase();
+                countOccurrence(occurrenceSearch);
                 break;
 
             case ("3"):

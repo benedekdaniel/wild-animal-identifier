@@ -4,6 +4,13 @@ import java.util.ArrayList;
 
 public class Bird extends Animal {
 
+    /**
+     * Bird Class
+     *
+     * Animal superclass contains
+     * additional properties
+     */
+
     private String beakShape;
     private String coloursOfFeathers;
     private Double minLengthOfWingspanCm;
@@ -41,6 +48,19 @@ public class Bird extends Animal {
         return maxLengthOfWingspanCm;
     }
 
+
+    public void setMaxLengthOfWingspanCm(Double maxLengthOfWingspanCm) {
+        this.maxLengthOfWingspanCm = maxLengthOfWingspanCm;
+    }
+
+    /**
+     * Overriding getAsStringList function
+     * to get back additional properties
+     * of Bird class
+     *
+     * @return asStringList for Bird
+     */
+
     @Override
     public ArrayList<String> getAsStringList() {
         ArrayList<String> asStringList = super.getAsStringList();
@@ -52,9 +72,6 @@ public class Bird extends Animal {
         return asStringList;
     }
 
-    public void setMaxLengthOfWingspanCm(Double maxLengthOfWingspanCm) {
-        this.maxLengthOfWingspanCm = maxLengthOfWingspanCm;
-    }
 
     @Override
     public String toString() {
