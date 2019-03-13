@@ -1,6 +1,5 @@
 package animal;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Bird extends Animal {
@@ -13,25 +12,6 @@ public class Bird extends Animal {
     public Bird(){
 
     }
-
-//    public Bird(final String aType, final String aNoun, final String aScientificNoun,
-//                final int aMinSizeCm, final int aMaxSizeCm, final int aMinWeightGrams,
-//                final int aMaxWeightGrams, final String aColour, final String aLocomotion,
-//                final String aCountry, final String aNaturalHabitats, final String aBeakShape,
-//                final String aColoursOfFeathers, final int aMinLengthOfWingspanCm,
-//                final int aMaxLengthOfWingspanCm){
-//
-//
-//        super(aType,aNoun, aScientificNoun, aMinSizeCm, aMaxSizeCm, aMinWeightGrams, aMaxWeightGrams,
-//                aColour, aLocomotion, aCountry, aNaturalHabitats);
-//
-//        this.beakShape = aBeakShape;
-//        this.coloursOfFeathers = aColoursOfFeathers;
-//        this.minLengthOfWingspanCm = aMinLengthOfWingspanCm;
-//        this.maxLengthOfWingspanCm = aMaxLengthOfWingspanCm;
-//
-//
-//    }
 
     public String getBeakShape() {
         return beakShape;

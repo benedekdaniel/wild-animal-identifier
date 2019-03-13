@@ -66,8 +66,6 @@ public class AnimalParser {
         }
 
         return animals=null;
-
-
     }
 
     private void newAnimal(String[] fields, Animal animal) {
@@ -83,6 +81,4 @@ public class AnimalParser {
         animal.setCountry(fields[9]);
         animal.setNaturalHabitats(fields[10]);
     }
-
-
 }

@@ -22,24 +22,6 @@ public abstract class Animal {
     }
 
 
-//    public Animal(final String aType, final String aNoun, final String aScientificNoun, final int aMinSizeCm,
-//                  final int aMaxSizeCm, final int aMinWeightGrams, final int aMaxWeightGrams, final String aColour,
-//                  final String aLocomotion, final String aCountry, final String aNaturalHabitats) {
-//
-//
-//        this.type = aType;
-//        this.noun = aNoun;
-//        this.scientificNoun  = aScientificNoun;
-//        this. minSizeCm = aMinSizeCm;
-//        this. maxSizeCm = aMaxSizeCm;
-//        this.minWeightGrams = aMinWeightGrams;
-//        this.maxWeightGrams = aMaxWeightGrams;
-//        this.colour = aColour;
-//        this.locomotion = aLocomotion;
-//        this.country = aCountry;
-//        this.naturalHabitats = aNaturalHabitats;
-//    }
-
 
     public String getType() {
         return type;
