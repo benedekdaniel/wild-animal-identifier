@@ -7,7 +7,7 @@ public class Bird extends Animal {
     /**
      * Bird Class
      *
-     * Animal superclass contains
+     * Animal childclass contains
      * additional properties
      */
 
